@@ -32,6 +32,9 @@ public class GraphOperationsTest {
         // Remove link that creates cycle
         graph.removeConnection(secondNode, fourthNode);
         assertFalse(GraphOperations.hasCycle(graph));
+        // Add another one with cycle
+        graph.addConnection(secondNode, firstNode);
+        assertTrue(GraphOperations.hasCycle(graph));
     }
 
     @Test
